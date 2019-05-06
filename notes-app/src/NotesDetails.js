@@ -11,9 +11,24 @@ const NotesEditor = ({text, handleChange}) =>{
 export default class NotesDetail extends Component{
     state = {
         isEditing: false,
-        draftText: this.props.note.text
+        draftText: this.props.note.text,
+        id: this.props.note.id
     }
     
+    static getDerivedStateFromProps(props, state){
+
+        //must return an object that describes any modifications to state
+        if (props.note.id !== state.id){
+            return {
+                id: props.note.id,
+                draftText: props.note.text
+            };
+        } else{
+            return null;
+        }
+        
+    }
+
     render(){
         // declares the className and Note variables 
         // and assigns them to the properties from this.props

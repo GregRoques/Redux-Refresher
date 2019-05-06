@@ -52,5 +52,21 @@ export default class NotesApp extends Component{
         })
 
     }
+
+    _updateNote = (idToUpdate, newText) =>{
+            const updatedNotes1 = this.state.notes.map(note => {
+                if(note.id === idToUpdate){
+                    return {
+                        ...note,
+                        text: newText
+                    }
+                }else{
+                    return {
+                        ...note
+                    };
+                }
+            })
+        
+    }
 }
 
