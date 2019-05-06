@@ -39,6 +39,7 @@ export default class NotesApp extends Component{
                 <NotesDetails 
                     className={styles.detail} 
                     note={theNote}
+                    handleSave ={this._updateNote}
                 />
             </div>
         )
@@ -54,19 +55,48 @@ export default class NotesApp extends Component{
     }
 
     _updateNote = (idToUpdate, newText) =>{
-            const updatedNotes1 = this.state.notes.map(note => {
-                if(note.id === idToUpdate){
-                    return {
-                        ...note,
-                        text: newText
-                    }
-                }else{
-                    return {
-                        ...note
-                    };
+        const updatedNotes1 = this.state.notes.map(note => {
+            if(note.id === idToUpdate){
+                return {
+                    ...note,
+                    text: newText
                 }
-            })
-        
+            }else{
+                return {
+                    ...note
+                };
+            }
+        })
+        this.setState({
+            notes: updatedNotes1    
+        });
     }
+            //====================================================================================
+
+            // const updatedNotes2 = this.state.notes.filter(
+            //     note => {
+            //         return note.id !== idToUpdate
+            //     })
+            //     const theNoteToUpdate = this.state.find(note => note.id ===idToUpdate);
+            //     this.setState({
+            //         notes:[
+            //             ...updatedNotes2,
+            //             {
+            //                 ...theNoteToUpdate,
+            //                 text: newText
+            //             }
+            //         ]
+            //     });
+                // //Alternatively
+                // this.setState({
+                //     notes:updatedNotes2.concat({
+                //         ...theNoteToUpdate,
+                //         text: newText
+                //     })
+                // })
+
+            
+        
+    
 }
 
