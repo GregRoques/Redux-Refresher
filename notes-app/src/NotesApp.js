@@ -48,7 +48,7 @@ export default class NotesApp extends Component{
     _selectNote = (id) => {
         //choose a note to show
         this.setState({
-            selectNote: id
+            selectedNote: id
         })
 
     }
