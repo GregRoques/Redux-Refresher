@@ -1,3 +1,33 @@
+
+//==============================================================================
+//Cats
+
+export const ACTION_CALLIE = 'ACTION_CALLIE';
+export const ACTION_MIDNIGHT = 'ACTION_MIDNIGHT';
+export const ACTION_NACHEAUX = 'ACTION_NACHEAUX'
+
+export function callie(name) {
+    return {
+        type: ACTION_CALLIE,
+    };
+}
+
+export function midnight(name) {
+    return {
+        type: ACTION_MIDNIGHT,
+    };
+}
+
+export function nacheaux(name) {
+    return {
+        type: ACTION_NACHEAUX,
+    };
+}
+
+
+//==============================================================================
+//Activities
+
 export const ACTION_NAP = 'ACTION_NAP';
 export const ACTION_EAT = 'ACTION_EAT';
 export const ACTION_PLAY = 'ACTION_PLAY'

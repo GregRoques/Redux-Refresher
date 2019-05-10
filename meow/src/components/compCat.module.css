@@ -1,0 +1,17 @@
+.catPicContainer{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+}
+
+img{
+    width:200;
+    margin: 10px;
+    cursor: pointer;
+    transition: 1s ease-out;
+}
+
+img:hover{
+    transform: scale(0.8);
+    transition: 1s ease-out;
+}
