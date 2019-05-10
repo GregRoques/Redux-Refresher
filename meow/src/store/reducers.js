@@ -1,5 +1,4 @@
-import { ACTION_EAT, ACTION_PLAY, ACTION_NAP } from './actions';
-
+import { ACTION_EAT, ACTION_PLAY, ACTION_NAP, ACTION_CHAOS, ACTION_CUDDLE } from './actions';
 
 export default function activity(state={}, action={type: ''}) {
     switch(action.type) {
@@ -45,9 +44,37 @@ export default function activity(state={}, action={type: ''}) {
                 }
             })
         break;
+        case ACTION_CHAOS:
+        const newState = state.map(cat =>{
+            if(Object.keys(cat) === action.payload.name){
+                return{
+                    ...state,
+                    [action.payload.name]:{
+                        activity: `Destroy Greg and Rebecca's nice
+                        purple recliners and dining room chairs. `
+                    }
+                }
+            } else {
+                return state;
+            }
+        })
+        break;
+        case ACTION_CUDDLE:
+        const newState = state.map(cat =>{
+            if(Object.keys(cat) === action.payload.name){
+                return{
+                    ...state,
+                    [action.payload.name]:{
+                        activity: 'Cuddles...YAY...PURR!!!'
+                    }
+                }
+            } else {
+                return state;
+            }
+        })
+        break;
         default:
             return state
         break;
-        
     }
 }
