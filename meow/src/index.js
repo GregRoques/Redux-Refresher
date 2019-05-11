@@ -9,16 +9,20 @@ import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux'
 
 //Reducers
-import { activity } from './store/reducers'
+import {activity} from './store/Reducers/activityReducers';
+import theCats from './store/Reducers/catsReducers';
 
 const rootReducer = combineReducers({
-    activity
+    activity: activity
 })
 
-const theStore = createStore(rootReducer);
+const store = createStore(rootReducer);
+
+window.store = store
+
 
 ReactDOM.render(
-    <Provider store={theStore}>
+    <Provider store={store}>
         <App />
     </Provider>, 
 document.getElementById('root'));

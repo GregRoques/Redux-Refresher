@@ -1,17 +1,23 @@
-export default function Activity({
-    name, 
+import React from 'react';
+
+export default function compAct({
+    activity,
     napClick,
     eatClick, 
     playClick, 
     cuddleClick, 
     chaosClick}){
-    return(
-        <div>
-            <button onClick={()=>napClick(name)}>Nap</button>
-            <button onClick={()=>eatClick(name)}>Eat</button>
-            <button onClick={()=>playClick(name)}>Play</button>
-            <button onClick={()=>cuddleClick(name)}>Cuddle</button>
-            <button onClick={()=>chaosClick(name)}>Chaos</button>
-        </div>
-    )
+        return(
+            <div>
+                {activity}
+                <br/>
+                <hr/>
+                <br/>
+                <button onClick={()=> napClick()}>Nap</button>
+                <button onClick={()=> eatClick()}>Eat</button>
+                <button onClick={()=> playClick()}>Play</button>
+                <button onClick={()=> cuddleClick()}>Cuddle</button>
+                <button onClick={()=> chaosClick()}>Chaos</button>
+            </div>
+        )
 }

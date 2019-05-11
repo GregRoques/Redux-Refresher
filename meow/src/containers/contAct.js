@@ -1,21 +1,21 @@
 import { connect } from 'react-redux'
-import Activity from '../components/compAct'
+import compAct from '../components/compAct'
 import { nap, eat, play, cuddle, chaos } from '../store/actions'
 
-mapStateToProps = state =>{
+const mapStateToProps = state => {
     return{
-        [state.name]:{
-            activity: state.activity
+        activity: state.activity
         }
+    }
+
+const mapDispatchToProps = dispatch => {
+    return{
+        napClick: ()=> dispatch(nap()),
+        eatClick: ()=> dispatch(eat()),
+        playClick: ()=> dispatch(play()),
+        cuddleClick: ()=> dispatch(cuddle()),
+        chaosClick: ()=> dispatch(chaos())
     }
 }
 
-mapDispatchToProps = dispatch =>{
-    napClick: (name)=> dispatch(nap(name));
-    eatClick: (name)=> dispatch(eat(name));
-    playClick: (name)=> dispatch(play(name));
-    cuddleClick: (name)=> dispatch(cuddle(name));
-    chaosClick: (name)=> dispatch(chaos(name));
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Activity)
+export default connect(mapStateToProps, mapDispatchToProps)(compAct)

@@ -6,21 +6,21 @@ export const ACTION_CALLIE = 'ACTION_CALLIE';
 export const ACTION_MIDNIGHT = 'ACTION_MIDNIGHT';
 export const ACTION_NACHEAUX = 'ACTION_NACHEAUX'
 
-export function callie(name) {
+export function callie() {
     return {
-        type: ACTION_CALLIE,
+        type: ACTION_CALLIE
     };
 }
 
-export function midnight(name) {
+export function midnight() {
     return {
-        type: ACTION_MIDNIGHT,
+        type: ACTION_MIDNIGHT
     };
 }
 
-export function nacheaux(name) {
+export function nacheaux() {
     return {
-        type: ACTION_NACHEAUX,
+        type: ACTION_NACHEAUX
     };
 }
 
@@ -34,47 +34,32 @@ export const ACTION_PLAY = 'ACTION_PLAY'
 export const ACTION_CHAOS = 'ACTION_CHAOS'
 export const ACTION_CUDDLE = 'ACTION_CUDDLE'
 
-export function nap(name) {
+export function nap() {
     return {
-        type: ACTION_NAP,
-        payload:{
-            name
-        }
+        type: ACTION_NAP
     };
 }
 
-export function eat(name) {
+export function eat() {
     return {
-        type: ACTION_EAT,
-        payload:{
-            name
-        }
+        type: ACTION_EAT
     };
 }
 
-export function play(name) {
+export function play() {
     return {
-        type: ACTION_PLAY,
-        payload:{
-            name
-        }
+        type: ACTION_PLAY
     };
 }
 
-export function chaos(name) {
+export function chaos() {
     return {
-        type: ACTION_CHAOS,
-        payload:{
-            name
-        }
+        type: ACTION_CHAOS
     };
 }
 
-export function cuddle(name) {
+export function cuddle() {
     return {
-        type: ACTION_CUDDLE,
-        payload:{
-            name
-        }
+        type: ACTION_CUDDLE
     };
 }

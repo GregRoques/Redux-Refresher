@@ -8,7 +8,7 @@ import Cats from './components/compCat'
 function App() {
   return (
     <div className="App">
-      <CompCat />
+      <Cats />
       <Activity />
 
     </div>
